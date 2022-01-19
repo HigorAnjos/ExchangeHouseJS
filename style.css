@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Turret+Road:wght@500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
 :root {
   --primary: #0fa36b;
   --secondary: #222;
@@ -26,20 +28,33 @@ body {
   margin-top: 2rem;
 }
 
-header{
-  height: 150px;
-}
-
 main {
   max-width: 450px;
   width: 100%;
 }
 
 h1 {
-  font-family: "Satisfy", cursive;
+  font-family: 'Questrial', sans-serif;
   color: var(--primary);
   font-size: 64px;
 }
+
+header{
+  height: 150px;
+  width: 600px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  align-items: center;
+}
+
+i {
+  font-family: "Satisfy", cursive;
+  color: var(--primary);
+  font-size: 64px;
+  margin: 6px 0;
+}
+
 label {
   color: var(--font-secondary);
 }
@@ -99,6 +114,47 @@ ul li b {
 
 ul li:nth-child(odd) {
   background-color: var(--secondary);
+}
+
+#container-dolar-real {
+  height: 500px;
+}
+#container-dolar-real input {
+  border: 0;
+  color: #909090;
+  font-family: verdana;
+  font-size: 3em;
+  margin-left: 0.1em;
+  text-align: right;
+  width: 100px;
+  transition: all 0.3s ease-in-out;
+}
+
+#container-dolar-real {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#container-dolar-real input:hover {
+  /* background-color: #E7F4C9; JS */
+  background-color: #E7F4C9;
+}
+
+
+.vale {
+  color: var(--font-secondary);
+  font-size: 1.5em;
+  margin: 0 5px;
+}
+#usd, #brl {
+  color:darkgoldenrod;
+  font-size: 2.0em;
+  margin: 0 10px;
+}
+
+#container-dolar-real img {
+  width: 200px;
 }
 
 .title-base {

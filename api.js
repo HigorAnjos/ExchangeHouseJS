@@ -4,8 +4,9 @@ const fetchCurrency = async (currency) => {
 
   handleRates(object.rates);
   handleBaseCurrency(object.base);
-
+  return object;
 }
+
 
 if (typeof(module) !== 'undefined') {
   module.exports = {

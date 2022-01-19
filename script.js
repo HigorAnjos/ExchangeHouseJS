@@ -35,6 +35,58 @@ const handleBaseCurrency = (currency) => {
 
 setupEventHandlers();
 
+
+/* USD vale BRL */
+
+const inputUsd = document.getElementById('input-usd');
+const inputBrl = document.getElementById('input-brl');
+
+inputUsd.addEventListener('change', setUsdToBrl);
+inputBrl.addEventListener('change', setUsdToUsd);
+
+async function setUsdToBrl (event) {
+  whideIput();
+  const dollar = Number(event.target.value);
+  const fetch = await fetchCurrency('usd');
+  const exchange = fetch.rates.BRL * dollar;
+  inputBrl.value =  exchange.toFixed(4).toString();
+}
+
+async function setUsdToUsd (event) {
+  whideIput();
+  const reais = Number(event.target.value);
+  const fetch = await fetchCurrency('brl');
+  const exchange = fetch.rates.USD * reais;
+  inputUsd.value = exchange.toFixed(4).toString();
+}
+
+inputUsd.addEventListener('click', whideIput);
+inputBrl.addEventListener('click', whideIput);
+
+let flagClear = true;
+function whideIput (event) {
+  [inputUsd, inputBrl].forEach((input) => {
+    input.style = "width: 200px;";
+  });
+
+  if (flagClear){
+    event.target.value = '';
+    flagClear = false;
+  }else {
+    flagClear = true;
+  }
+}
+
+
+async function setCoinInterfaceDefault () {
+  const dollar = 1;
+  const fetch = await fetchCurrency('usd');
+  const exchange = fetch.rates.BRL * dollar;
+  inputBrl.value =  exchange.toFixed(2).toString();
+  inputUsd.value = '1';
+}
+
 window.onload = () => {
   handleSearchEvent();
+  setCoinInterfaceDefault();
 }
