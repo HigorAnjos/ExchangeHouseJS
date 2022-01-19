@@ -41,8 +41,8 @@ setupEventHandlers();
 const inputUsd = document.getElementById('input-usd');
 const inputBrl = document.getElementById('input-brl');
 
-inputUsd.addEventListener('change', setUsdToBrl);
-inputBrl.addEventListener('change', setUsdToUsd);
+inputUsd.addEventListener('input', setUsdToBrl);
+inputBrl.addEventListener('input', setUsdToUsd);
 
 async function setUsdToBrl (event) {
   whideIput();
