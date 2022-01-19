@@ -47,7 +47,7 @@ inputBrl.addEventListener('change', setUsdToUsd);
 async function setUsdToBrl (event) {
   whideIput();
   const dollar = Number(event.target.value);
-  const fetch = await fetchCurrency('usd');
+  const fetch = await fetchObjCurrency('usd');
   const exchange = fetch.rates.BRL * dollar;
   inputBrl.value =  exchange.toFixed(4).toString();
 }
@@ -55,7 +55,7 @@ async function setUsdToBrl (event) {
 async function setUsdToUsd (event) {
   whideIput();
   const reais = Number(event.target.value);
-  const fetch = await fetchCurrency('brl');
+  const fetch = await fetchObjCurrency('brl');
   const exchange = fetch.rates.USD * reais;
   inputUsd.value = exchange.toFixed(4).toString();
 }
@@ -80,7 +80,7 @@ function whideIput (event) {
 
 async function setCoinInterfaceDefault () {
   const dollar = 1;
-  const fetch = await fetchCurrency('usd');
+  const fetch = await fetchObjCurrency('usd');
   const exchange = fetch.rates.BRL * dollar;
   inputBrl.value =  exchange.toFixed(2).toString();
   inputUsd.value = '1';

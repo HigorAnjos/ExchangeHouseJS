@@ -4,12 +4,9 @@ const fetchCurrency = async (currency) => {
 
   handleRates(object.rates);
   handleBaseCurrency(object.base);
-  return object;
 }
 
-
-if (typeof(module) !== 'undefined') {
-  module.exports = {
-    fetchCurrency,
-  };
-}
+const fetchObjCurrency = (coin) => (
+  fetch(`https://api.exchangerate.host/latest?base=${coin}`)
+  .then(data => data.json())
+);
