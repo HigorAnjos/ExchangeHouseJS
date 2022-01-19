@@ -15,7 +15,6 @@
   padding: 0;
   box-sizing: border-box;
   background-color: var(--bg-color);
-  overflow: hidden;
 }
 
 body {
@@ -26,6 +25,7 @@ body {
   align-items: center;
   flex-flow: column nowrap;
   margin-top: 2rem;
+  overflow-x: hidden;
 }
 
 main {
@@ -69,6 +69,7 @@ input[type="text"] {
   max-width: 450px;
   width: 100%;
 }
+
 button {
   margin: 1rem 0;
   outline: none;
@@ -96,9 +97,10 @@ button:hover {
 ul {
   max-width: 550px;
   width: 100%;
-  max-height: 600px;
+  height: 500px;
   overflow-y: scroll;
   font-family: "Turret Road", cursive;
+  margin-bottom: 30px;
 }
 
 ul li {
@@ -117,7 +119,8 @@ ul li:nth-child(odd) {
 }
 
 #container-dolar-real {
-  height: 500px;
+  height: 400px;
+  margin-bottom: 30px;
 }
 #container-dolar-real input {
   border: 0;
@@ -137,10 +140,8 @@ ul li:nth-child(odd) {
 }
 
 #container-dolar-real input:hover {
-  /* background-color: #E7F4C9; JS */
   background-color: #E7F4C9;
 }
-
 
 .vale {
   color: var(--font-secondary);

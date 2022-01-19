@@ -77,7 +77,6 @@ function whideIput (event) {
   }
 }
 
-
 async function setCoinInterfaceDefault () {
   const dollar = 1;
   const fetch = await fetchObjCurrency('usd');
